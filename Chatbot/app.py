@@ -18,10 +18,10 @@ CORS(app)
 import openai
 
 # Assuming your API keys are stored securely and are now being correctly retrieved
-key = "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"
+
 
 # Set the API key
-openai.api_key = key
+
 import os
 
 key = os.getenv('KEY')
@@ -63,6 +63,7 @@ def qdb(query, db_client, name, cname):
             .with_limit(limit)
             .do()
         )
+        print(res,"resssssssssssssssssssssssssss")
         context = ""
         metadata = []
         chunk_id = 0
@@ -162,7 +163,7 @@ def webhook():
 def send_whatsapp_message(to, message):
     url = "https://graph.facebook.com/v18.0/233232389874980/messages"
     headers = {
-        'Authorization': 'Bearer EAAQCw46knDUBOyONs7rMVA3YQhUU8AsPrKoEQIZBF1Hy3OtwsZAJuwgS3JJsYw4qbQFVhVVjBbtxH7ucS4C6iYUoqkmqlztvbHIFZA9Vv1SrZAPjRAMvWPNFpqsdLYReSxDTCcOtuFyteR2YotnMITt7ZCs0wA6ViV1UNbOW8hoMHJsTeP7OOASnplwy7nsRSPiATZA3XlRiy6zsR0LBwZD',  # Replace YOUR_ACCESS_TOKEN with your actual access token
+        'Authorization': 'Bearer EAAQCw46knDUBOzfRlkNgxZCcxDha5QokBu0nS767tjKzymQ51m8X6ZA7u11ZAHFvna53RYewZAfqRhObiupNAKMdRWqXuTTjXOtosxiUfEDrLjZCZA063oUqYZAGcoMtMFN2i8m74ZBP602DfZCN3akq0IdvuGqirMFi5m77qcY9A8qMZBBCT4ZCmZB0uNh4HaPi3Ofu1kPkEbexsgXNFriOupQZD',
         'Content-Type': 'application/json'
     }
     data = {
